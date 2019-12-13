@@ -14,6 +14,11 @@ class NinjaCard extends StatefulWidget {
 class _NinjaCardState extends State<NinjaCard> {
   int _count=0;
 
+  void counter(){
+    setState(() {
+      _count+=1;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,11 +30,7 @@ class _NinjaCardState extends State<NinjaCard> {
         elevation: 0.0,
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            _count+=1;
-          });
-        },
+        onPressed: counter,
         child: Icon(Icons.add),
         backgroundColor: Colors.grey[800],
       ),

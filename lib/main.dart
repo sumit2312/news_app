@@ -12,15 +12,26 @@ class NinjaCard extends StatefulWidget {
 }
 
 class _NinjaCardState extends State<NinjaCard> {
+  int _count=0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[900], 
       appBar: AppBar(
         title: Text("ID CARD"),
-        centerTitle: true,
+        centerTitle: true, 
         backgroundColor: Colors.grey[850],
         elevation: 0.0,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            _count+=1;
+          });
+        },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.grey[800],
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
@@ -38,7 +49,7 @@ class _NinjaCardState extends State<NinjaCard> {
             ),
             Text(
               "NAME",
-              style: TextStyle(
+              style: TextStyle( 
                 color: Colors.blueGrey[200],
                 letterSpacing: 2.0,
               ),
@@ -48,6 +59,28 @@ class _NinjaCardState extends State<NinjaCard> {
             ),
             Text(
               "SUMIT",
+              style: TextStyle(
+                color: Colors.blueGrey[300],
+                letterSpacing: 5.0,
+                fontSize: 30.0,
+                fontFamily: 'Anurati',
+              ),
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            Text(
+              "LEVEL",
+              style: TextStyle( 
+                color: Colors.blueGrey[200],
+                letterSpacing: 2.0,
+              ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Text(
+              "$_count",
               style: TextStyle(
                 color: Colors.blueGrey[300],
                 letterSpacing: 5.0,
